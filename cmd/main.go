@@ -17,7 +17,7 @@ func main() {
 	}
 	var subtitleService domain.SubtitleService = &secondary.SubtitleGeminiService{}
 
-	http.HandleFunc("/transcribe", primary.RequestTranscription(subtitleService, key))
+	http.HandleFunc("/api/transcribe", primary.LoggerInterceptor(primary.RequestTranscription(subtitleService, key)))
 
 	log.Println("Servidor iniciado")
 

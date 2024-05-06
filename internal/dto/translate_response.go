@@ -1,5 +1,5 @@
 package dto
 
 type TranscriptionResponse struct {
-	Transcription string `json:"transcription"`
+	Subtitle string `json:"subtitle"`
 }

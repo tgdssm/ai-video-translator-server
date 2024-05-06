@@ -24,7 +24,7 @@ func (s *SubtitleGeminiService) GenerateCaption(transcription string, apiKey str
 	}(client)
 
 	model := client.GenerativeModel("gemini-pro")
-	resp, err := model.GenerateContent(ctx, genai.Text(fmt.Sprintf("traduzir para pt_br: %s", transcription)))
+	resp, err := model.GenerateContent(ctx, genai.Text(fmt.Sprintf("traduzir para pt_br mantendo os termos tecnicos: %s", transcription)))
 	if err != nil {
 		panic(err)
 	}
